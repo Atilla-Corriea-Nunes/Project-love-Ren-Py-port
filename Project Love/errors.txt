@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 67: expected 'image_name_component' not found.
-    show "{size=+20}This is big!" at truecenter
-         ^
+File "game/script.rpy", line 864: end of line expected.
+    octolady "Quite the gentleman's response! Hu hu hu hu! You got your manners taught right back home for sure!"\
+                                                                                                                 ^
 
-File "game/script.rpy", line 214: expected 'image_name_component' not found.
-    show "{size=+2}One walk to the park later" at truecenter
-         ^
+File "game/script.rpy", line 1032: end of line expected.
+    jump octoladyreject:
+                       ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Jul  1 02:19:21 2023
+Sat Jul  1 20:25:57 2023

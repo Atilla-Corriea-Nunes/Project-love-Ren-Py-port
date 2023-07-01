@@ -73,8 +73,8 @@ image octolady angry:
     "octolady angry.png"
     zoom 0.25
 
-image octolady happy:
-    "octolady happy.png"
+image octolady blush:
+    "octolady blush.png"
     zoom 0.25
 
 image octolady sad:
@@ -650,8 +650,9 @@ label pond:
     me "I guess you could say that..."
     unknownoctolady "Well, seems like I've lucked out on the hottie I found today. You're so, otherworldly and intriguing."
     unknownoctolady "I want you to go out on a date with me."
-    me 'I want you to go out on a date with me.'
+    me 'Wha-what do you mean?'
     unknownoctolady "I've never seen anyone like you before. Your uniqueness attracts me."
+    unknownoctolady "There is something about you I can't put my finger on and it makes me want to know everything about you."
     unknownoctolady "So go out on a date with me. My treat!"
 
 label pond2:    
@@ -659,7 +660,8 @@ label pond2:
         "Accept":
             jump octoladydateaccept
         "Reject":
-            unknownoctolady "Hmpf, well, I simply won't give you a choise then"
+            hide octolady
+            unknownoctolady "Hmpf, well, I simply won't give you a choice then"
             unknownoctolady "No hotties may leave without going on a small date atleast once!"
             menu:
                 "lets try that again...":
@@ -712,11 +714,13 @@ label  noblowkiss:
     me "Goodbye, Aaliyah. Until next time!"
     show octolady happy at top
     birdinspirit "Psst, casanova. Why didn't you give her a kiss on the cheek?"
+    show octolady normal at top
     menu:
         "Yeah good idea, i'll try again":
             jump octoladydateaccept2
 
 label blowkiss:
+    show octolady normal at top
     me "Hey Aaliyah, look at me!"
     me "Mwah!"
     show octolady happy at top
@@ -861,7 +865,7 @@ label vehicle:
     show octolady normal at top
     me "Oh come on Aaliyah, you're still young! Stop calling yourself old!"
     show octolady happy at top
-    octolady "Quite the gentleman's response! Hu hu hu hu! You got your manners taught right back home for sure!"\
+    octolady "Quite the gentleman's response! Hu hu hu hu! You got your manners taught right back home for sure!"
     show octolady normal at top
     octolady "I'm starting to feel light-headed and warm inside. I think we might need to go back. I'm afraid I'll dry out otherwise."
     octolady "I had an amazing time though, thank you!"
@@ -943,6 +947,7 @@ label proper:
     octolady "You did leave me alone for an entire week. That wasn't cool. But you know, if you call me the most handsome girl in the world, I will."
 
 label proper2:
+    show octolady normal at top
     menu:
         "Call her the most handsome girl in the world":
             jump handsome
@@ -1029,7 +1034,7 @@ label handsome:
         "Accept her love":
             jump octoladyaccept
         "Reject her love":
-            jump octoladyreject:
+            jump octoladyreject
 
 label octoladyreject:
     show octolady normal at top
@@ -1053,3 +1058,9 @@ label octoladyreject:
         "let me try the city!":
             hide bird
             jump city
+
+label octoladyaccept:
+    show octolady at top
+    octolady "Yaay! I knew you would say yes. We're going to be the most adorable couple. I'm so happy! You showed me how good life can be, and I'm very grateful for that."
+    octolady "Let's be together forever!"
+    return
