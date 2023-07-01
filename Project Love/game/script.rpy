@@ -29,6 +29,10 @@ image bg alleyway:
     "bg alleyway.png"
     zoom 0.9
 
+image bg pond:
+    "bg pond.png"
+    zoom 0.9
+
 image bird normal:
     "bird normal.png"
     zoom 0.25
@@ -57,12 +61,30 @@ image catboy sad:
     "catboy sad.png"
     zoom 0.25
 
+image octolady normal:
+    "octolady normal.png"
+    zoom 0.25
 
+image octolady happy:
+    "octolady happy.png"
+    zoom 0.25
 
-    
+image octolady angry:
+    "octolady angry.png"
+    zoom 0.25
+
+image octolady happy:
+    "octolady happy.png"
+    zoom 0.25
+
+image octolady sad:
+    "octolady sad.png"
+    zoom 0.25
+
 # The game starts here.
 
 label start:
+    play music "audio/Ethereal_Harmony.mp3"
     scene bg staircase
     "Flowers? Check. Those cheesy heart shaped boxes filled with chocolates you see in every romance movie? Check. Looks like I've got everything for my date with Vanessa."
     "I still have no idea how I banked the hottest chick in class, but I'm not complaining. Her long hair, her beautiful eyes and her very big, firm  and well rounded..."
@@ -99,8 +121,8 @@ label walkup:
     me "What are you?"
     bird "I think it's better if you ask me WHO I am. The name's Corvo. I brought you here to fulfill your destiny!"
     me "What destiny? My destiny was to have a date with my smoking hot date!"
-    bird "Do you really think Vanessa would have wanted to go out with such a sad little loser like you? You've got no dating experience!"
     show bird mock at top
+    bird "Do you really think Vanessa would have wanted to go out with such a sad little loser like you? You've got no dating experience!"
     bird "Fwie fwie fwie fwie! Don't make me laugh! But not to fear because I am here! I will guide you and make sure you ace your dates in no time!"
     show bird normal at top
     me "What? What dates? I just want to go on my date with Vanessa!"
@@ -128,6 +150,7 @@ label walkup:
             "Game Dev Team" "(Authors note: No chicks are going to banged)"
             jump city
         "Go to the Pond":
+            hide bird
             jump pond
 
 label gohome:
@@ -210,7 +233,7 @@ label catboyflirt:
     show catboy normal at top
     catboy "Hmmmm. Fine."
     hide catboy
-    show text "{size=+50}{color=#2d532f}One walk to the park later...{/color}" at truecenter
+    show text "{size=+50}{color=#000000}One walk to the park later...{/color}" at truecenter
     with dissolve
     pause 3
     hide text
@@ -321,14 +344,14 @@ label yescatboy:
     "Okay, that went well I think. Atleast I didn't lose all my money."
     "I still don't know why I agreed to go on a date with him, but it was nicer than I expected."
     show bird mock at top
-    bird 'Fwie Fwie Fwie, how are you doing, young fellow.'
-    me "What are you doing here, Corvo?"
+    bird "Fwie Fwie Fwie, how are you doing, young fellow."
     show bird normal at top
+    me "What are you doing here, Corvo?"
     bird "I came here to congratulate you on succesfully having your first date."
     show bird mock at top
     bird "Oh, my little socially inept little fellow, growing up so fast."
-    me 'Hey!'
     show bird normal at top
+    me 'Hey!'
     bird "I'm sorry, I'm just very proud of you. Keep going like you're doing now."
     bird "I'll be waiting for you when you finish your second date."
     show bird mock at top
@@ -445,7 +468,7 @@ label give:
     show catboy happy at top
     catboy "Wait, you're giving me money? You shouldn't have, but I really appreciate them!"
     hide catboy
-    show text "{size=+50}{color=#2d532f}Later...{/color}" at truecenter
+    show text "{size=+50}{color=#000000}Later...{/color}" at truecenter
     with dissolve
     pause 3
     hide text
@@ -517,7 +540,7 @@ label catboydate3:
     show catboy happy at top
     catboy "Yaay! I'm so excited! Lets go!"
     hide catboy
-    show text "{size=+50}{color=#2d532f}Another walk to the park later...{/color}" at truecenter
+    show text "{size=+50}{color=#000000}Another walk to the park later...{/color}" at truecenter
     with dissolve
     pause 3
     hide text
@@ -599,10 +622,434 @@ label catboyreject:
     bird "I'm kidding, but the choise is yours. What will it be, young fellow?"
     menu:
         "i give up :(":
+            hide bird
             return
         "let me try the pond!":
             hide bird
             jump pond
-            
+
 label pond:
-    return
+    "The pond is way closer than that city. Definitely a no-brainer to go there first."
+    "And to be honest, the park is kinda nice. Nothing like it would be normally, but nice."
+    "The park seems ten times bigger than normal. In the real world, it's just a small vertical park on top of some roofs of a building."
+    show bg pond
+    "Here, it's huge! There are flowers and bushes everywhere. The park is a lot broader and there seems to be a lake with a fountain up ahead."
+    "It seems like a perfect place to sit, calm down and think about what happened."
+    show octolady normal at top
+    "Oh, there is already someone at the fountain. They have very luscious purple hair and, tentacles?!"
+    unknownoctolady "Hu hu hu hu! Hello there love, you seem quite puzzled, is something wrong?"
+    me "You...have tentacles..."
+    unknownoctolady "My my, straight to the point I see. Well, you aren't wrong. I'm half octopus after all."
+    me "How. How does that even happen?"
+    show octolady happy at top
+    unknownoctolady "Well, you see, when a mommy octopus and a daddy octopus love each other very much..."
+    me "And I thought this whole situation couldn't get any weirder."
+    unknownoctolady "I'm just messing with you, love. Hu hu hu hu."
+    show octolady normal at top
+    unknownoctolady "I haven't seen you around here love, do you come from far away or something?"
+    me "I guess you could say that..."
+    unknownoctolady "Well, seems like I've lucked out on the hottie I found today. You're so, otherworldly and intriguing."
+    unknownoctolady "I want you to go out on a date with me."
+    me 'I want you to go out on a date with me.'
+    unknownoctolady "I've never seen anyone like you before. Your uniqueness attracts me."
+    unknownoctolady "So go out on a date with me. My treat!"
+
+label pond2:    
+    menu:
+        "Accept":
+            jump octoladydateaccept
+        "Reject":
+            unknownoctolady "Hmpf, well, I simply won't give you a choise then"
+            unknownoctolady "No hotties may leave without going on a small date atleast once!"
+            menu:
+                "lets try that again...":
+                    jump pond2
+
+label octoladydateaccept:
+    show octolady happy at top
+    unknownoctolady "Yaay! Alright, lets get this date started!"
+    show octolady normal at top
+    me "So, what is your name? I feel like it's rude to not ask for the name of my date."
+    show octolady happy at top
+    octolady "Oh my, where are my manners! I'm way too quick and rushing into things again. My name is Aaliyah, nice to meet you."
+    show octolady normal at top
+    octolady "So, now that you asked me a question, I want to know more about you! Where are you from? I've never seen anyone like you, and trust me, I've seen a lot of people."
+    me "I'm from Earth."
+    octolady 'Earth? Never heard of that before. It sounds like a beautiful place. Just the name makes me want to visit sometime!'
+    me "Yeah, very beautiful. Earth has lots of water."
+    octolady "Really? That sounds amazing! I love that place already. Earth must be far if I have never seen anyone like you before. Do all people from Earth look like you?"
+    me "I mean, sort of? I'm surprised you have never seen a human before. I've seen octolings plenty."
+    show octolady happy at top
+    octolady "REALLY? WHERE! WHAT DO THEY LOOK LIKE? WHAT DO THEY DO? HOW DO I GET TO EARTH?"
+    show octolady sad at top
+    octolady "Sorry, I got a little excited. You see, I lost my family at sea. I washed up on the shore when I was little, and someone took me with them."
+    octolady "Eventually, I ended up here, and I've been looking for my parents ever since."
+    show octolady normal at top
+    me "Can't you just get out?"
+    octolady "You see, I can walk and sit on non-water objects, but it tires me out greatly. There is no sea nearby, and no lakes in the area are connected to the sea, so I'm kind of stuck. "
+    octolady "But if you have heard of octo people like me, you must be able to tell me about them! What are the octo people like on Earth?"
+    me "Yeah, well, funny story actually. You guys mostly appear in Japanese adult comic books."
+    show octolady happy at top
+    octolady "That sounds so cool! I bet we're superheroes fighting crime! These tentacles are made to fight crime."
+    show octolady normal at top
+    me "...yeah... definitely... you guys are superheroes for sure. Your tentacles really show people who's boss..."
+    octolady "Man does Earth sound exciting! Too bad I'm mostly stuck at this fountain."
+    me "How far can you go without water?"
+    octolady "I sadly can't leave much further than the park. It's really frustrating, but I guess there is nothing to be done about it. I just kind of sit here and wait for people to come along that I can talk to. "
+    octolady "I just kind of sit here and wait for people to come along that I can talk to. "
+    octolady "But oh my, I'm oversharing. Thanks for keeping me company though. I'm here if you're looking for me."
+    me "No problem, Aaliyah. It's been nice talking to you. I'll definitely come back if I'm in the area and looking for some company. Take care!"
+    octolady "Thank you! I'll be right here, waiting. Take care too, and maybe next time you visit, you can tell me more about Earth and those octo people. Goodbye for now!"
+
+label octoladydateaccept2:    
+    menu:
+        "I'll blow her a kiss on my way out":
+            jump blowkiss
+        "i wont blow her a kiss on my way out":
+            jump noblowkiss
+
+label  noblowkiss:
+    me "Goodbye, Aaliyah. Until next time!"
+    show octolady happy at top
+    birdinspirit "Psst, casanova. Why didn't you give her a kiss on the cheek?"
+    menu:
+        "Yeah good idea, i'll try again":
+            jump octoladydateaccept2
+
+label blowkiss:
+    me "Hey Aaliyah, look at me!"
+    me "Mwah!"
+    show octolady happy at top
+    octolady "Awh, thank you! You're adorable"
+    hide octolady
+    show text "{size=+50}{color=#000000}Later...{/color}" at truecenter
+    with dissolve
+    pause 3
+    hide text
+    with dissolve
+    show bg generic
+    "Okay, that went well I think. She seems pretty nice."
+    "Didn't think she'd ask me out on a date this fast though."
+    show bird mock at top
+    bird "Fwie Fwie Fwie, how are you doing, young fellow."
+    show bird normal at top
+    me "What are you doing here, Corvo?"
+    bird "I came here to congratulate you on succesfully having your first date."
+    show bird mock at top
+    bird "Oh, my little socially inept little fellow, growing up so fast."
+    show bird normal at top
+    me 'Hey!'
+    bird "I'm sorry, I'm just very proud of you. Keep going like you're doing now."
+    bird "I'll be waiting for you when you finish your second date."
+    show bird mock at top
+    bird "At this rate, you might have a shot at dating Vanessa!"
+    show bird normal at top
+    bird "Anyways, it's time for you to continue your search for love, my little fellow. Are you ready?"
+    menu:
+        "Yes":
+            hide bird
+            jump octoladydate2
+
+label octoladydate2:
+    show bg pond
+    "Yesterday was certainly an interesting encounter. I feel kind of bad for Aaliyah, though. Being stuck in a small lake in the middle of a park probably gets lonely. Not to mention the lack of privacy."
+    "I've decided I'm going to visit her again. She seemed desperate for social interaction, and if talking to her makes her happier, I'll talk to her. "
+    "I'd hate to be in her situation; the lack of privacy would eat me alive."
+    "I've been thinking about where to bring her. If she can't leave this park, then her options are limited. I might be able to somehow carry her to a nice spot in the park."
+    "It could be good for her to enjoy something other than that small lake."
+    show octolady normal at top
+    octolady "Hey love! Such a surprise to see you here! A happy surprise, though."
+    me "Yeah, I know. I kept thinking about how lonely you must be staying in that water all the time."
+    octolady "And what's supposed to be wrong about staying in the place that keeps me alive?"
+    show octolady happy at top
+    me "Nothing, but I thought you might not get out often, so I wanted to ask you out on a date in the park."
+    show octolady sad at top
+    octolady "Oh sweetie, that's adorable of you. The thing is, by the time we found a good spot, I'd have to be returning already, or else I'll dry out."
+    octolady "My tentacles have to be wet, and every time I walk, some of that wetness sticks to the ground. That's why I can't go long distances."
+    show octolady normal at top
+    me "What if I carry you?"
+    octolady "What do you mean?"
+    me "Would you be able to have a small date in the park with me if I carried you there so you don't lose too much water by walking there yourself?"
+    octolady "I think that might be possible! Are you sure though? I don't want to break your back."
+    show octolady happy at top
+    octolady "Alright, I'll climb on top of you. Hang on!"
+
+label octoladydate2_1:
+    show octolady normal at top
+    menu:
+        "Im gonna make vehicle noises while carrying Aaliyah":
+            jump vehicle
+        "Im gonna act like a normal human adult should":
+            jump normal
+
+label normal:
+    hide octolady
+    me "Alright, let's go!"
+    birdinspirit "Wow, you sure are the life of the party. You should try that again"
+    menu:
+        "Yeah, you're right. My bad":
+            jump octoladydate2_1
+        "Wtf thats my choice what if i dont want to look like an idiot??":
+            birdinspirit "JUST MAKE THE DAMN VEHICE NOISES"
+            menu:
+                "OKAY FINE JEEZ":
+                    jump octoladydate2_1
+
+label vehicle:
+    show octolady normal at top
+    me "Vroom! Vroooom! Eeeeeek! Beep-beep! Skreeee! Clunk! Swish-swish! Pop-pop! Beep-beep!"
+    octolady "What are you doing?"
+    me "I'm making car noises! I'm a human vehicle"
+    show octolady happy at top
+    octolady "You're adorable! Go my little wagon, go!"
+    show octolady normal at top
+    me "I can't go any faster!"
+    octolady "You better go faster or I'll treat you like a horse and slap your butt to go faster!"
+    me "Well this is conflicting- I mean yes ma'am"
+    hide octolady
+    show text "{size=+50}{color=#000000}One goofy ride later...{/color}" at truecenter
+    with dissolve
+    pause 3
+    hide text
+    with dissolve
+    show bg generic
+    "You know, I kind of regret offering to carry Aaliyah. These tentacles weigh like feathers, but giving a piggyback ride to an adult instead of a kid really does make a difference."
+    "It was worth it though, she seems really happy to be in this part of the park."
+    show octolady normal at top
+    "I don't think she's been able to truly experience how nice this park actually is."
+    show octolady happy at top
+    octolady "This place is so beautiful! I never got to spend much time here before! You chose a good spot!"
+    show octolady normal at top
+    me "Thank you! I came across it when I first came here."
+    octolady "Does Earth have any of these kinds of places?"
+    me "Loads! Not all are as colorful and peaceful though."
+    octolady "Well, from what I've heard, this place isn't too peaceful either. The park is fine, but the city in the far distance has a bad reputation."
+    me "Why?"
+    octolady "Lots of criminal activity from what I've heard. If you plan on going there, watch your back."
+    me "Really? I'll make sure I watch my back."
+    show octolady happy at top
+    octolady "Good, I wouldn't want to see the hottie in front of me get hurt. I'd have to patch you right up."
+    show octolady normal at top
+    me "You could patch me up anytime."
+    show octolady happy at top
+    octolady "Oh, how adorable! Young people are so cocky!"
+    show octolady normal at top
+    me "Young? If you think I'm young, how old are you?"
+    show octolady happy at top
+    octolady "My my, have you never been taught to not ask a lady for her age! Just kidding, I'm 32 love."
+    show octolady normal at top
+    me "Really? You sure don't look the part. You look 10 years younger at least!"
+    show octolady blush at top
+    octolady "Oh, don't make me blush!"
+    show octolady normal at top
+    octolady "To be honest, 10 might be a bit of an overstatement, but I never thought she would be older than 26. She's hot though, I dig it."
+    me "So what do you do in your free time?"
+    "That's such a stupid question. She physically can't leave the pond. What is she gonna say? SWIM?"
+    octolady "Well, I obviously can't go far by myself, so I usually hang out in the pond and strike up conversations with hotties crossing my way."
+    me " You do seem like quite the extrovert."
+    octolady "Awh, thank you! You learn to love it if it's the only way to get any way of social interaction."
+    me "Is that why you were so eager to go out on a date with me?"
+    show octolady happy at top
+    octolady "Well, I'd be lying if I didn't admit it's the reason I first talked to you. Though I must say, you looked rather nice. Can't expect me not to pass up asking you out on a date when you look like that."
+    show octolady normal at top
+    "Man this girl is flirting with me hard, I'm not sure if I dislike it though!"
+    me "My my, you sure do love calling me hot, don't you?"
+    show octolady blush at top
+    octolady "..."
+    me "Well, that's totally fine. But a cutie like you needs to hear they're hot too every once in a while."
+    octolady "Oh stop, you're making me blush. The damn nerve of young people these days."
+    show octolady normal at top
+    me "Oh come on Aaliyah, you're still young! Stop calling yourself old!"
+    show octolady happy at top
+    octolady "Quite the gentleman's response! Hu hu hu hu! You got your manners taught right back home for sure!"\
+    show octolady normal at top
+    octolady "I'm starting to feel light-headed and warm inside. I think we might need to go back. I'm afraid I'll dry out otherwise."
+    octolady "I had an amazing time though, thank you!"
+
+label vehicle2:
+    menu:
+        "Im gonna propperly wish her farewell":
+            jump proper
+        "Im just gonna say bye":
+            jump bye
+
+label bye:
+    me "Bye!"
+    hide octolady
+    birdinspirit "Psst, casanova. You can be a bit more kinder than that. Here, go ahead and try again"
+    menu:
+        "Fair enough":
+            jump vehicle2
+
+label proper:
+    show octolady normal at top
+    me "Yeah it was amazing. Take care alright! See you later!"
+    show octolady happy at top
+    octolady "Yeah, see later love!"
+    hide octolady
+    show text "{size=+50}{color=#000000}Later...{/color}" at truecenter
+    with dissolve
+    pause 3
+    hide text
+    with dissolve
+    "Man, I never thought Aaliyah would enjoy the date that much."
+    "I hope I can make the next one even better."
+    show bird mock at top
+    bird "Fwie Fwie Fwie. Why so happy, my young fellow? Not to worry, I already know. You had a good date!"
+    show bird normal at top
+    me "*sighs* Hey Corvo"
+    bird "Not happy to see me? I thought we were student and mentor. Fwie fwie fwie."
+    me "Well, you see--"
+    show bird mock at top
+    bird "You don't have to answer that, I KNOW we have that bond my little fellow. You're just a little shy."
+    show bird normal at top
+    me "..."
+    bird "Now now don't give me that look. I'm just trying to lighten up the mood."
+    bird "Anyhoot, your journey doesn't end here. I'll be hooting for you~."
+    show bird mock at top
+    bird "Knock 'em dead darling. Chiao~!"
+    hide bird
+    me "I swear, i'll never understand this guy...."
+    show text "{size=+50}{color=#000000}Later...{/color}" at truecenter
+    with dissolve
+    pause 3
+    hide text
+    with dissolve
+    "You know, I might have regretted giving an adult a piggy ride, but I don't regret seeing Aaliyah that happy."
+    "It felt like she could finally have a conversation without having to worry the other person wasn't up to it and would leave her all alone in that pond."
+    "But there were none, so I had to pick flowers growing in the park. Not my classiest moment. Corvo definitely has a reason to laugh at me now, but as long as Aaliyah doesn't realize, I guess it's fine."
+    "Again, not my proudest moment, but I got to give credit to my creativity."
+    "That being vandalizing a public park."
+    "Do they have fantasy police over here? Will I be thrown into fantasy jail over my fantasy vandalism?"
+    "Probably not to be honest. I don't think that the people who made this fantasy world wanted to go through that kind of trouble. Seems like too much work."
+    "Anyways, I've been thinking of ways to get Aaliyah in contact with her family."
+    "I don't know if there are any waters nearby, but maybe we could rent a truck or something, place a little kiddy pool in there and fill it with water."
+    "Maybe she could stay in there until we reach a river or an ocean. Even then, if this place is anything like Earth, the world should be mostly made out of water."
+    "And if Aaliyah's family lives in the wild, there is a decent chance they've ended up as someone's dinner."
+    "Even then, I have no idea if Aaliyah would even want to find her family. Maybe I should just ask her once I get to the lake."
+    "The lake is just up ahead, just a few more steps and I should be there."
+    show bg pond
+    "Huh, that's weird, she isn't here."
+    "Where did she go? Man, I hope the fisherman didn't get to her. I spent all this time getting flowers for he-"
+    show octolady happy at top
+    octolady 'BOO! Hu hu hu hu! Did I scare you love? I sure hope I did!'
+    show octolady normal at top
+    me 'Were you planning on giving me a heart attack? I brought flowers to take you out on a date you know!'
+    octolady "Well, I might just have. You left me to sit there and wait for you for an entire week you know. I thought you'd never come back."
+    show octolady happy at top
+    octolady "But I do appreciate the flowers love. Such a little gentleman."
+    show octolady normal at top
+    me "Well, would you still want to go out on a third date with me?"
+    octolady "You did leave me alone for an entire week. That wasn't cool. But you know, if you call me the most handsome girl in the world, I will."
+
+label proper2:
+    menu:
+        "Call her the most handsome girl in the world":
+            jump handsome
+        "Dont call her the most handosme girl in the world":
+            jump nothandsome
+
+label nothandsome:
+    hide octolady
+    me "Nope, not going to happen."
+    octolady "You know what, I was willing to let it slide if you just said that, but now I won't. You should go reflect on how you've treated me the past week."
+    birdinspirit "You really just said that huh? Here, you should try that one again"
+    menu:
+        "Yeah, you're right":
+            jump proper2
+        "I just kinda wanted to see what would happen lmao":
+            birdinspirit "*facepalm*"
+            jump proper2
+
+label handsome:
+    show octolady normal at top
+    me "You know what, sure. Aaliyah, you're the most handsome girl in the world."
+    show octolady happy at top
+    octolady "You know, I was kidding, but that's actually really sweet. Let's go on that date."
+    show octolady normal at top
+    me "So, I'm going to have to be honest here, I haven't thought of any place that we could go to this time."
+    octolady 'We should just stay here, I have to recharge my water levels anyways. I was waiting in the bushes for a while.'
+    me "Alright, that's fine with me. Is there any reason you wanted to scare me?"
+    show octolady happy at top
+    octolady "I felt like you might as well feel some of my pain. And it kinda worked hu hu hu hu."
+    show octolady normal at top
+    octolady "So, what have you been up to, love? Done anything exciting without me?"
+    me "Most of my week has been spent looking for flowers for you, to be honest. They're hard to buy around here."
+    octolady "So you got them from the park?"
+    me "HOW DID YOU KNOW?!"
+    show octolady happy at top
+    octolady "Oh love, I've lived here for most of my life. I might be restricted to just the park, but that doesn't mean I don't leave my pond often, you know. I do appreciate the flowers though."
+    show octolady normal at top
+    me "Man, I feel embarrassed right now. Did you know this whole time?"
+    octolady "Yup, but I thought it was cute, so I wasn't going to say anything."
+    show octolady happy at top
+    octolady "You look adorable when you're embarrassed though. Hu hu hu hu!"
+    show octolady normal at top
+    me "Hey now, don't make fun of me!"
+    octolady "Don't worry, love, I'm just teasing you. I do mean it when I say you're cute though."
+    me "You know you're supposed to be nice to your date, right?"
+    show octolady happy at top
+    octolady "Oh, but I am! I just like seeing my date a little flustered. I guess you're a bit shy when it comes to compliments. Hu hu hu hu!"
+    show octolady normal at top
+    me "As if you're one to talk, I saw that blushing face every time I complimented you on our previous dates."
+    octolady "That never happened. You're lying!"
+    me "So if I call you an adorable, cute-looking octogirl, you wouldn't be blushing?"
+    show octolady blush at top
+    octolady "...No..."
+    show octolady normal at top
+    me "See, knew you were lying!"
+    me "So now, on a more serious note, I've been thinking of ways to get you back to the ocean!"
+    me "Maybe we can rent a small van, put a little plastic swimming pool in there, and drive to the nearest ocean!"
+    octolady 'Well-'
+    me "Or maybe I can just lift you to some river nearby and get you to the ocean that way."
+    octolady 'Actually-'
+    me "Or can you move freely in the rain? I don't think you can since you stayed here all this time, but maybe that's an option too?"
+    show octolady angry at top
+    octolady "HEY! I'm trying to tell you something!"
+    show octolady normal at top
+    octolady "I'm not going to move anywhere."
+    me "What but you said-"
+    octolady "I know what I said before, but I've realized that I really don't have a clue where my family is, or if they would even still be alive."
+    octolady "One thing I do know is that they would want me to be safe, and since this is about the most peaceful you can get, I've decided to stay here."
+    show octolady happy at top
+    octolady "Plus, a little cutie from Earth helps to make it more bearable too!"
+    show octolady normal at top
+    me "Really? Are you just going to live in the pond forever?"
+    octolady "You know, it isn't that bad. I've made quite some friends over the years, and I have no one in the ocean."
+    show octolady happy at top
+    octolady "Plus, I don't think you have gills. It gets kind of hard to breathe underwater without them."
+    show octolady normal at top
+    me "What do you mean? Do you want me to come with you?"
+    show octolady blush at top
+    octolady "Well, you see, I've been thinking about it. You've been so nice to me, and you made me realize how much I have in this park. And in doing so, you made me a lot more confident in my own skin."
+    octolady "I kinda started falling for your kindness towards me on the second date when you went out of your way to lift me to a spot in the park just to have a unique date with me."
+    octolady "I guess I haven't asked yet, so I'll do it right now. I know this is going fast all of a sudden, but I feel like I need to ask."
+    octolady "Do you want to be my partner? Do you want to spend the rest of your life with me?"
+    menu:
+        "Accept her love":
+            jump octoladyaccept
+        "Reject her love":
+            jump octoladyreject:
+
+label octoladyreject:
+    show octolady normal at top
+    octolady "Oh, well, I guess that is to be expected. I got so caught up in my own feelings I didn't even consider that you might not feel the same way about me."
+    hide octolady
+    pause 1
+    show bg generic
+    show bird normal at top
+    bird "Hmm? Was she not your style? But you two seemed so cute together."
+    bird "Oh well, these things happen sometimes. I can't force you to date Aaliyah."
+    bird "Too bad though, she was the hottest milf around the park."
+    bird "Well, since you denied to be Aaliyah's partner, do you wish to meet other bachelors? You haven't been to the city after all."
+    show bird mock at top
+    bird "You're also free to give up if you decide you're too bad at dating! Fwie fwie fwie fwie!"
+    show bird normal at top
+    bird "I'm kidding, but the choise is yours. What will it be, young fellow?"
+    menu:
+        "i give up :(":
+            hide bird
+            return
+        "let me try the city!":
+            hide bird
+            jump city
