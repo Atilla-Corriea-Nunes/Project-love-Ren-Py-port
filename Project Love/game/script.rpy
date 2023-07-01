@@ -423,6 +423,9 @@ label sprint:
     catboy "Well, the fishies are convincing, but I do also want to go out with you. You should come back to visit me in a week; I bet I'll be better!"
     me "Alright, I'll make sure to come back next week. You better not rob anyone until then alright!"
     catboy "Got it boss. No more robbing!"
+
+label sprint2:
+    show catboy normal at top
     menu:
         "Im gonna give Elliot some money to get through the week":
             jump give
@@ -430,11 +433,176 @@ label sprint:
             jump dontgive
 
 label dontgive:
+    hide catboy
     "I didn\'t give Elliot any money. I\'m sure he\'ll be alright. Atleast, that\'s what I tell myself"
+    birdinspirit "What, you can't spare change to the homeless? How heartless. lets try that again"
+    menu:
+        "oops":
+            jump sprint2
     return
 
 label give:
+    show catboy happy at top
+    catboy "Wait, you're giving me money? You shouldn't have, but I really appreciate them!"
+    hide catboy
+    show text "{size=+50}{color=#2d532f}Later...{/color}" at truecenter
+    with dissolve
+    pause 3
+    hide text
+    with dissolve
+    show bg generic
+    "Man, I seriously need to keep a better eye on Elliot."
+    "Atleast he's okay now....I hope..."
+    show bird mock at top
+    bird "Fwie Fwie Fwie. Why so gloomy, my young fellow?"
+    show bird normal at top
+    me "*sighs* Hey Corvo"
+    bird "My, you look like you've seen better days! Whatever has happened back there?"
+    me "Well, you see--"
+    show bird mock at top
+    bird "You don't have to answer that, I already saw everything."
+    show bird normal at top
+    me "..."
+    bird "Now now don't give me that look. I'm just trying to lighten up the mood."
+    show bird mock at top
+    bird "Anyhoot, your journey doesn't end here. I'll be hooting for you~."
+    bird "Knock 'em dead darling. Chiao~!"
+    hide bird
+    me "I swear, i'll never understand this guy...."
+    show bg alleyway
+    "It's been a week since I saw Elliot. I'm kind of scared in which state I'll find him this time but all I can hope for is that he is safe."
+    "And of course, I bought more fish. My wallet is begging for me to stop but I would feel a little bit bad if I didn't."
+    "I've decided to take him out to the park again. It may be cheesy and a bit repetitive, but I don't want to stay in this hellhole of a city for longer than I have to."
+    "No matter how many times I've been here, it feels more and more unsafe."
+    "To be fair, the fact that the first time I got robbed and the second time I saw someone bleeding badly probably doesn't help make me feel safer."
+    "Finding Elliot also isn't easy. It feels like he could be anywhere."
+    "Now, looking for a normal person already isn't easy, but this really feels like finding a twink in a haystack."
+    "I just hope I find him soon. I wouldn't be surprised if I got robbed before I find hi-"
+    "You feel yourself get dragged into a back alley"
+    show catboy normal at top
+    catboy "Money, phone, and wallet!"
+    me "I thought I told you to stop robbing people, Elliot."
+    catboy "And I listened! I just thought I'd say hi in a unique fashion."
+    me "You smelled the fish, didn't you?"
+    show catboy happy at top
+    catboy "Could smell it from a mile away, so I figured you were looking for me."
+    show catboy normal at top
+    me "Who says these are for you? Maybe I'm trying to romance some other cute catboy."
+    show catboy angry at top
+    catboy "YOU'D NEVER! THOSE ARE MY FISHIES."
+    show catboy normal at top
+    me "If you want the fish, I'm afraid you're going to have to go out on another date with me."
+    catboy "Oh nooooooo the horrorrrrrrrrrrr!"
+    me "Well, in that case, I'll just find the next best catboy."
+    show catboy angry at top
+    catboy "NO NO NO NO NO NO NOPE! We're going on a date RIGHT MEOW!"
+    hide catboy
+
+label give2:
+    menu:
+        "Go on a date":
+            jump catboydate3
+        "Dont go on a date":
+            jump rejectiondate3
     return
 
+label rejectiondate3:
+    catboy "Noooooo you MEANIE! Why don't you want to anymore? You still have a date voucher you know..."
+    birdinspirit "My, you've made him upset. No need to fret, lets try that again"
+    menu:
+        "sounds like a plan":
+                jump give2
+
+label catboydate3:
+    show catboy happy at top
+    catboy "Yaay! I'm so excited! Lets go!"
+    hide catboy
+    show text "{size=+50}{color=#2d532f}Another walk to the park later...{/color}" at truecenter
+    with dissolve
+    pause 3
+    hide text
+    with dissolve
+    show bg generic
+    show catboy normal at top
+    "The two of us took the time to walk back to the park to get out of this awful city. Luckily, no stabbings or robberies occurred on the way out, which was nice. "
+    "This might be the first time we get to go out together without anything bad happening. I figured we were due for a good date. I don't regret buying fish for the occasion."
+    "I know Elliot said he'd go on a date with me regardless, but it feels wrong to not bring anything."
+    "The walk is quite long, but seeing Elliot so happy is nice."
+    me "So how have you been doing? Has your wound been healing nicely?"
+    catboy "I've been doing well! The wounds have healed up alright. They aren't fully closed yet, but we're getting there!"
+    me "That's nice! I'm glad you're doing ok. Couldn't bear seeing such a cutie in distress, you know."
+    show catboy blush at top
+    catboy "Awh! Thanks for worrying about me. You're so attentive."
+    catboy "You've been giving me loads of fish, helped me clear up my wounds, and gave me the motivation I needed to turn my life around."
+    show catboy normal at top
+    me "It's nothing, I saw a cute catboy in distress and figured I might as well help him."
+    show catboy blush at top
+    catboy "You're a good person, you know."
+    show catboy normal at top
+    me "Yeah, too good for my own good. My wallet's been screaming at me. Fish is so expensive here."
+    catboy "Awh, but it's for a good cause!"
+    me "You're a good cause now?"
+    catboy "I'm my own charity."
+    me "More like a charity case."
+    catboy "..."
+    me "Cutest charity case though!"
+    show catboy happy at top
+    catboy "By the way, I have big BIG news to tell you!"
+    me "Oh, what's the big news?"
+    catboy "Well, your words last week inspired me. If you were willing to help me, there must be someone out there who would want to do so too!"
+    catboy "So, with that in mind, I walked all over town to find a place that would hire me. "
+    catboy "After a long while, I found this corner store that agreed to hire me. The best thing is, they even let me sleep in the back of the store as long as I open up the next day! "
+    catboy "My days of sleeping on the street are over!"
+    show catboy normal at top
+    me "That's amazing, Elliot! I knew you could do it! I told you that someone would be looking out for you. No one could say no to such a pretty face."
+    catboy "Well, I owe it all to you. If you hadn't inspired me to go out and better my life, who knows how long it would have taken me to do so on my own!"
+    catboy  "For all I know, I could've died out on those streets. So really, thank you for being there for me."
+    me "No problem. I would gladly do it again!"
+    catboy "I'm going to have to be honest with myself. I need to tell you something."
+    me "What's up, Elliot?"
+    show catboy blush at top
+    catboy "Well, you see, ever since you said those words to me last week, I haven't been able to think of anything else... Or anyone else. "
+    catboy "You cared so much for me. You first had the guts to hit on me while I was threatening you, then you took me out. I still don't know what made you do that."
+    show catboy normal at top
+    me "This was cheaper than being robbed of everything I have."
+    show catboy blush at top
+    catboy "I guess. But to get back to what I was saying... On the second date, when you cared for me, patched me up, and gave me motivation to better myself, it felt so sincere."
+    catboy "And shirtless you was pretty hot too."
+    catboy "Regardless, though, I started to fall for you. Then a week later, you came back to check up on me and take me out on another date. Man, this is getting kind of embarrassing, but I think I like you."
+    catboy "I've never felt this way before. My heart races every time I see you, and I feel so safe around you. I guess I only have one last thing to ask of you."
+    catboy "Do you like me as well? Do you want to stay by my side? Do you want to be my partner in non-crime related activities?"
+    show catboy normal at top
+    menu:
+        "Accept his love":
+            jump catboyaccept
+        "Reject him":
+            jump catboyreject
+
+label catboyaccept:
+    show catboy happy at top
+    catboy "I KNEW YOU'D AGREE. This makes me so happy! Think of all the things we can do together once I get my life together! Man, it's going to be so much fun!"
+    return
+
+label catboyreject:
+    show catboy normal at top
+    catboy "Oh, that's okay. I shouldn't have gotten my hopes up. I knew there was a chance you'd say no, but I hoped you'd say yes. Can we still be friends though?"
+    hide catboy
+    pause 1
+    show bird normal at top
+    bird "Hmm? Was he not your style? But you two seemed so cute together."
+    bird "Oh well, these things happen sometimes. I can't force you to date Elliot."
+    bird "Too bad though, he was the best trap in the city."
+    bird "Well, since you denied to be Elliot's partner, do you wish to meet other bachelors? You haven't been to the pond after all."
+    show bird mock at top
+    bird "You're also free to give up if you decide you're too bad at dating! Fwie fwie fwie fwie!"
+    show bird normal at top
+    bird "I'm kidding, but the choise is yours. What will it be, young fellow?"
+    menu:
+        "i give up :(":
+            return
+        "let me try the pond!":
+            hide bird
+            jump pond
+            
 label pond:
     return
