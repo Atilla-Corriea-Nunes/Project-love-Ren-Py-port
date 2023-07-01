@@ -230,7 +230,7 @@ label catboyflirt2:
         "Share your fish":
             jump Share
         "Dont Share your fish":
-            jump Noshare
+            jump NoShare
     return
 
 label NoShare:
@@ -252,7 +252,7 @@ label Share:
     me "In all fairness, I was wondering why such a cute kitty cat was roaming the streets but I never got to ask you until now."
     catboy "Well, it's complicated."
     me "I can handle it."
-    show catboy anrgy at top
+    show catboy angry at top
     catboy "You're quite persistent, aren't you?"
     me "Persistent is my middle name."
     catboy "I've noticed."
@@ -298,6 +298,7 @@ label Share:
     catboy 'I usually hang out around the city, so if you\'re looking for me, you know where to find me.'
 
 label Share2:
+    show catboy normal at top
     catboy "You do want to go out on another date, right?"
     menu:
         "Yes":
@@ -430,6 +431,10 @@ label sprint:
 
 label dontgive:
     "I didn\'t give Elliot any money. I\'m sure he\'ll be alright. Atleast, that\'s what I tell myself"
+    return
+
+label give:
+    return
 
 label pond:
     return
