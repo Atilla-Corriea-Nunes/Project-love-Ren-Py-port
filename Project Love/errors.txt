@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 67: expected 'image_name_component' not found.
+    show "{size=+20}This is big!" at truecenter
+         ^
+
+File "game/script.rpy", line 214: expected 'image_name_component' not found.
+    show "{size=+2}One walk to the park later" at truecenter
+         ^
+
+Ren'Py Version: Ren'Py 8.1.1.23060707
+Sat Jul  1 02:19:21 2023
