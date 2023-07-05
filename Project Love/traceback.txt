@@ -1,32 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 677, in script
-    show octolady normal at bottom
-  File "game/script.rpy", line 677, in <module>
-    show octolady normal at bottom
-NameError: name 'bottom' is not defined
+  File "game/script.rpy", line 623, in script
+    if Haslooped == True:
+  File "game/script.rpy", line 623, in <module>
+    if Haslooped == True:
+NameError: name 'Haslooped' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 677, in script
-    show octolady normal at bottom
-  File "E:\Ren'Py\renpy-8.1.1-sdk\renpy\ast.py", line 1428, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "E:\Ren'Py\renpy-8.1.1-sdk\renpy\ast.py", line 1387, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "E:\Ren'Py\renpy-8.1.1-sdk\renpy\ast.py", line 1387, in <listcomp>
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "game/script.rpy", line 623, in script
+    if Haslooped == True:
+  File "E:\Ren'Py\renpy-8.1.1-sdk\renpy\ast.py", line 2133, in execute
+    if renpy.python.py_eval(condition):
   File "E:\Ren'Py\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "E:\Ren'Py\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 677, in <module>
-    show octolady normal at bottom
-NameError: name 'bottom' is not defined
+  File "game/script.rpy", line 623, in <module>
+    if Haslooped == True:
+NameError: name 'Haslooped' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
-Project Love 1.0
-Wed Jul  5 18:20:39 2023
+Project Love 1.2
+Thu Jul  6 00:24:15 2023
