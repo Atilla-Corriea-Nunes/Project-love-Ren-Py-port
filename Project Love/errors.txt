@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 864: end of line expected.
-    octolady "Quite the gentleman's response! Hu hu hu hu! You got your manners taught right back home for sure!"\
-                                                                                                                 ^
-
-File "game/script.rpy", line 1032: end of line expected.
-    jump octoladyreject:
-                       ^
+File "game/script.rpy", line 1063: end of line expected.
+    show octolady at to center
+                        ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Jul  1 20:25:57 2023
+Wed Jul  5 18:23:54 2023

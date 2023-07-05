@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -139,26 +139,25 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos 565
+    xpos 610
     xanchor gui.name_xalign
-    xsize 480
-    ypos -190
-    ysize 120
+    xsize 360
+    ypos -110
+    ysize 80
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    size 40
+    xalign 0.12
     yalign 0.5
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-
-    xpos 600
-    xsize 740
-    ypos 0
+    xsize 640
+    ypos -20
 
     adjust_spacing False
 
